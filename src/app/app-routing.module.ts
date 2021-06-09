@@ -6,7 +6,13 @@ const routes: Routes = [
   {
     path: '',
     component: PokedexComponent
+  },{
+    path: '**',
+    component: PokedexComponent
   }
+
+
+  
 ];
 
 @NgModule({
