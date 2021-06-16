@@ -1,11 +1,13 @@
 <div class="container">
     <div class="row">
         <div class="col col-3 p-2" *ngFor="let pkmn of listaPkmn" >
-            <div class="text-center p-2 border border-dark">
+            <div  class="text-center p-2 border border-dark">
                 <div>
-                    <image src="{{pkmn.sprites.other.dream_world.front_default}}" alt=""></image>
+                    <img style="height: 250px;" class="w-100" src="{{pkmn.sprites.other.dream_world.front_default}}" >
                 </div>
-                {{pkmn.name | titlecase}}
+                <strong>
+                    {{pkmn.name | titlecase}}
+                </strong>
             </div>
         </div>
     </div>
