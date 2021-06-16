@@ -9,7 +9,7 @@ import { ApiKachuService } from '../Servicios/api-kachu.service';
 })
 export class PokemonComponent implements OnInit {
   pkmn: any;
-
+  urlimg: string;
   constructor(
     private apiKachu: ApiKachuService,
     private route: ActivatedRoute
@@ -24,12 +24,22 @@ export class PokemonComponent implements OnInit {
     this.route.params.subscribe(params => {
       num = params.num;
     });
-
     this.apiKachu.getPKMN(num).then(datos => {
       this.pkmn = datos;
-      console.log(datos.stats);
+      console.log(datos);
     })
+  }
 
+  creoClase(tipo1, tipo2){
+    if(tipo2 == undefined){
+      return tipo1+"-top " + tipo1+"-left " + tipo1+"-right " + tipo1+"-bottom"
+    } else {
+      return tipo1+"-top " + tipo1+"-left " + tipo2.type.name+"-right " + tipo2.type.name+"-bottom"
+    }
+  }
+
+  creoClaseTipo(tipo1){
+      return tipo1+"-top " + tipo1+"-left " + tipo1+"-right " + tipo1+"-bottom"
   }
 
 }

@@ -28,4 +28,12 @@ export class PokedexComponent implements OnInit {
     }    
   }
 
+  creoClase(tipo1, tipo2){
+    if(tipo2 == undefined){
+      return tipo1+"-top " + tipo1+"-left " + tipo1+"-right " + tipo1+"-bottom"
+    } else {
+      return tipo1+"-top " + tipo1+"-left " + tipo2.type.name+"-right " + tipo2.type.name+"-bottom"
+    }
+  }
+
 }

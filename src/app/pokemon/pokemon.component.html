@@ -1,120 +1,139 @@
-<div class="container-fluid">
+<div class="container-fluid" style="font-size: 24px;">
+    <!--              -->
+    <!-- Basic Info   -->
+    <!--              -->
     <div class="row">
-        <div class="col col-4 mt-5">
-            <div class="text-center p-2">
-                <div class="my-4">
-                    <img style="height: 250px;" class="w-100" src="{{pkmn.sprites.other.dream_world.front_default}}"
-                        [routerLink]="['/pokemon/', pkmn.id]">
+        <div class="col col-3 mt-2">
+            <div class="p-2">
+                <div class="mt-1 d-flex justify-content-center">
+                    <img style="height: 350px;" class="p-3" src="{{pkmn.sprites.other.dream_world.front_default}}"
+                        [routerLink]="['/pokemon/', pkmn.id]"
+                        [ngClass]="creoClase(pkmn.types[0].type.name, pkmn.types[1])">
                 </div>
-
             </div>
         </div>
-        <div class="col col-8 my-5">
+        <div class="col col-9 my-5">
             <div class="col col-12">
-                <div> <strong>
-                        <h2>{{pkmn.name | titlecase}}</h2>
-                    </strong></div>
+                <div>
+                    <b>
+                        <h2 class="display-5">{{pkmn.name | titlecase}}</h2>
+                    </b>
+                </div>
             </div>
             <div class="col col-12 mt-5">
                 <div class="row">
-                    <div class="col col-12">
-                        <h3>Tipos</h3>
+                    <div class="col col-12" >
+                        Tipos
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col col-4 text-center">
-                        <div class="font-weight-bold border border-success"> 
-                            <strong>
-                                <h2>{{pkmn.types[0].type.name | titlecase }}</h2>
-                            </strong>
+                    <div class="col col-4 text-center p-2">
+                        <div class="rounded" [ngClass]="creoClaseTipo(pkmn.types[0].type.name)" >
+                            {{pkmn.types[0].type.name | titlecase }}
                         </div>
                     </div>
-                    <div *ngIf="pkmn.types[1] != undefined " class="col col-4 text-center">
-                        <div class="font-weight-bold border border-success"> 
-                            <strong>
-                                <h2>{{pkmn.types[1].type.name | titlecase }}</h2>
-                            </strong>
+                    <div *ngIf="pkmn.types[1] != undefined " class="col col-4 text-center p-2">
+                        <div class="rounded" [ngClass]="creoClaseTipo(pkmn.types[1].type.name)" >
+                            {{pkmn.types[1].type.name | titlecase }}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col col-12 mt-3">
                 <div class="row">
-                    <div class="col col-12">
-                        <h3>Habilidades</h3>
+                    <div class="col col-12" >
+                        Habilidades
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col col-4 text-center">
-                        <div class="font-weight-bold border border-success"> 
-                            <strong>
-                                <h2>{{pkmn.abilities[0].ability.name | titlecase }}</h2>
-                            </strong>
+                    <div class="col col-4 text-center" >
+                        <div class="border rounded">
+                            {{pkmn.abilities[0].ability.name | titlecase }}
                         </div>
                     </div>
-                    <div *ngIf="pkmn.abilities[1] != undefined " class="col col-4 text-center">
-                        <div class="font-weight-bold border border-success"> 
-                            <strong>
-                                <h2>{{pkmn.abilities[1].ability.name | titlecase }}</h2>
-                            </strong>
+                    <div *ngIf="pkmn.abilities[1] != undefined " class="col col-4 text-center" >
+                        <div class="border rounded">
+                            {{pkmn.abilities[1].ability.name | titlecase }}
                         </div>
                     </div>
-                    <div *ngIf="pkmn.abilities[2] != undefined " class="col col-4 text-center">
-                        <div class="font-weight-bold border border-success"> 
-                            <strong>
-                                <h2>{{pkmn.abilities[2].ability.name | titlecase }}</h2>
-                            </strong>
+                    <div *ngIf="pkmn.abilities[2] != undefined " class="col col-4 text-center" >
+                        <div class="border rounded">
+                            {{pkmn.abilities[2].ability.name | titlecase }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!--              -->
+    <!-- ESTADISTICAS -->
+    <!--              -->
     <div class="row">
         <div class="col col-1"></div>
-        <div class="col col-10">
-            <div class="row">
+        <div class="col col-10 p-2">
+            <div class="row" >
+                Estadísticas
+            </div>
+            <div class="row" style="font-size: 22px;">
                 <div class="col col-2">
-                    <span> <strong>{{pkmn.stats[0].stat.name | titlecase}}:</strong></span>
-                    <span>{{pkmn.stats[0].base_stat}}</span>
-                    <div *ngIf="pkmn.stats[0].base_stat < 50" class="rounded bg-danger" style="width: 33%; height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[0].base_stat > 49 && pkmn.stats[0].base_stat < 90" class="rounded bg-warning" style="width: 66%;height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[0].base_stat > 89" class="rounded bg-success"style="width: 100%; height: 20px;"></div>
+                    {{pkmn.stats[0].stat.name | titlecase}}:
+                    {{pkmn.stats[0].base_stat}}
+                    <div *ngIf="pkmn.stats[0].base_stat < 50" class="rounded bg-danger"
+                        style="width: 33%; height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[0].base_stat > 49 && pkmn.stats[0].base_stat < 90" class="rounded bg-warning"
+                        style="width: 66%;height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[0].base_stat > 89" class="rounded bg-success"
+                        style="width: 100%; height: 20px;"></div>
                 </div>
                 <div class="col col-2">
-                    <span><strong>{{pkmn.stats[1].stat.name | titlecase}}:</strong></span>
-                    <span>{{pkmn.stats[1].base_stat}}</span>
-                    <div *ngIf="pkmn.stats[1].base_stat < 50" class="rounded bg-danger" style="width: 33%; height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[1].base_stat > 49 && pkmn.stats[1].base_stat < 90" class="rounded bg-warning" style="width: 66%;height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[1].base_stat > 89" class="rounded bg-success"style="width: 100%; height: 20px;"></div>
+                    {{pkmn.stats[1].stat.name | titlecase}}:
+                    {{pkmn.stats[1].base_stat}}
+                    <div *ngIf="pkmn.stats[1].base_stat < 50" class="rounded bg-danger"
+                        style="width: 33%; height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[1].base_stat > 49 && pkmn.stats[1].base_stat < 90" class="rounded bg-warning"
+                        style="width: 66%;height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[1].base_stat > 89" class="rounded bg-success"
+                        style="width: 100%; height: 20px;"></div>
                 </div>
                 <div class="col col-2">
-                    <span><strong>{{pkmn.stats[2].stat.name | titlecase}}:</strong></span>
-                    <span>{{pkmn.stats[2].base_stat}}</span>
-                    <div *ngIf="pkmn.stats[2].base_stat < 50" class="rounded bg-danger" style="width: 33%; height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[2].base_stat > 49 && pkmn.stats[2].base_stat < 90" class="rounded bg-warning" style="width: 66%;height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[2].base_stat > 89" class="rounded bg-success"style="width: 100%; height: 20px;"></div>
+                    {{pkmn.stats[2].stat.name | titlecase}}:
+                    {{pkmn.stats[2].base_stat}}
+                    <div *ngIf="pkmn.stats[2].base_stat < 50" class="rounded bg-danger"
+                        style="width: 33%; height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[2].base_stat > 49 && pkmn.stats[2].base_stat < 90" class="rounded bg-warning"
+                        style="width: 66%;height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[2].base_stat > 89" class="rounded bg-success"
+                        style="width: 100%; height: 20px;"></div>
                 </div>
                 <div class="col col-2">
-                    <span><strong>{{pkmn.stats[3].stat.name | titlecase}}:</strong></span>
-                    <span>{{pkmn.stats[3].base_stat}}</span>
-                    <div *ngIf="pkmn.stats[3].base_stat < 50" class="rounded bg-danger" style="width: 33%; height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[3].base_stat > 49 && pkmn.stats[3].base_stat < 90" class="rounded bg-warning" style="width: 66%;height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[3].base_stat > 89" class="rounded bg-success"style="width: 100%; height: 20px;"></div>
+                    {{pkmn.stats[3].stat.name | titlecase}}:
+                    {{pkmn.stats[3].base_stat}}
+                    <div *ngIf="pkmn.stats[3].base_stat < 50" class="rounded bg-danger"
+                        style="width: 33%; height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[3].base_stat > 49 && pkmn.stats[3].base_stat < 90" class="rounded bg-warning"
+                        style="width: 66%;height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[3].base_stat > 89" class="rounded bg-success"
+                        style="width: 100%; height: 20px;"></div>
                 </div>
                 <div class="col col-2">
-                    <span><strong>{{pkmn.stats[4].stat.name | titlecase}}:</strong></span>
-                    <span>{{pkmn.stats[4].base_stat}}</span>
-                    <div *ngIf="pkmn.stats[4].base_stat < 50" class="rounded bg-danger" style="width: 33%; height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[4].base_stat > 49 && pkmn.stats[4].base_stat < 90" class="rounded bg-warning" style="width: 66%;height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[4].base_stat > 89" class="rounded bg-success"style="width: 100%; height: 20px;"></div>
+                    {{pkmn.stats[4].stat.name | titlecase}}:
+                    {{pkmn.stats[4].base_stat}}
+                    <div *ngIf="pkmn.stats[4].base_stat < 50" class="rounded bg-danger"
+                        style="width: 33%; height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[4].base_stat > 49 && pkmn.stats[4].base_stat < 90" class="rounded bg-warning"
+                        style="width: 66%;height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[4].base_stat > 89" class="rounded bg-success"
+                        style="width: 100%; height: 20px;"></div>
                 </div>
                 <div class="col col-2">
-                    <span><strong>{{pkmn.stats[5].stat.name | titlecase}}:</strong></span>
-                    <span>{{pkmn.stats[5].base_stat}}</span> 
-                    <div *ngIf="pkmn.stats[5].base_stat < 50" class="rounded bg-danger" style="width: 33%; height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[5].base_stat > 49 && pkmn.stats[5].base_stat < 90" class="rounded bg-warning" style="width: 66%;height: 20px;"></div>
-                    <div *ngIf="pkmn.stats[5].base_stat > 89" class="rounded bg-success"style="width: 100%; height: 20px;"></div>
+                    {{pkmn.stats[5].stat.name | titlecase}}:
+                    {{pkmn.stats[5].base_stat}}
+                    <div *ngIf="pkmn.stats[5].base_stat < 50" class="rounded bg-danger"
+                        style="width: 33%; height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[5].base_stat > 49 && pkmn.stats[5].base_stat < 90" class="rounded bg-warning"
+                        style="width: 66%;height: 20px;"></div>
+                    <div *ngIf="pkmn.stats[5].base_stat > 89" class="rounded bg-success"
+                        style="width: 100%; height: 20px;"></div>
                 </div>
             </div>
         </div>
