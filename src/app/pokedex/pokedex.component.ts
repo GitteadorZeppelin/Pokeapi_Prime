@@ -8,22 +8,26 @@ import { ApiKachuService } from '../Servicios/api-kachu.service';
 })
 export class PokedexComponent implements OnInit {
 
-  listaPkmn: any; 
+  listaPkmn = [];
+
   constructor(
     private apiKachu: ApiKachuService
   ) { }
 
   ngOnInit(): void {
-    this.getPkmn()
+    this.getPkmn(1);
   }
 
 
-  getPkmn(){
-    this.apiKachu.getPkmn().subscribe(datos=>{
-      
-      this.listaPkmn = datos;
-      this.listaPkmn = this.listaPkmn.results
-      console.log(this.listaPkmn)
-    })
+  getPkmn(page) {
+
+    this.listaPkmn = [];
+    for (let x = page; x < (page+32); x++) {
+      this.apiKachu.getPKMN(x).then(datos => {
+        console.log(datos.sprites.other.dream_world)
+        this.listaPkmn[datos.id-1] = datos
+      }) 
+    }    
   }
+
 }

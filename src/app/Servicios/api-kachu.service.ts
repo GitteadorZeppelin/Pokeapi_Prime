@@ -12,7 +12,8 @@ export class ApiKachuService {
     private http: HttpClient
   ) { }
 
-  getPkmn(){
-    return this.http.get(this.url);
+
+  getPKMN(id): Promise<any>{
+    return this.http.get("https://pokeapi.co/api/v2/pokemon/" + id + "/").toPromise()
   }
 }

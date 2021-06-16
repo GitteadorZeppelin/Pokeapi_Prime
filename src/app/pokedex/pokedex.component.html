@@ -1,7 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col col-3" *ngFor="let pkmn of listaPkmn" >
-            {{pkmn.name | titlecase}}
+        <div class="col col-3 p-2" *ngFor="let pkmn of listaPkmn" >
+            <div class="text-center p-2 border border-dark">
+                <div>
+                    <image src="{{pkmn.sprites.other.dream_world.front_default}}" alt=""></image>
+                </div>
+                {{pkmn.name | titlecase}}
+            </div>
         </div>
     </div>
 </div>
