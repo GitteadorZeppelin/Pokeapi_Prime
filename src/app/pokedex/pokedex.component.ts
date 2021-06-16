@@ -20,11 +20,9 @@ export class PokedexComponent implements OnInit {
 
 
   getPkmn(page) {
-
     this.listaPkmn = [];
-    for (let x = page; x < (page+12); x++) {
+    for (let x = ((page-1)*12)+1; x <= (page*12); x++) {
       this.apiKachu.getPKMN(x).then(datos => {
-        console.log(datos.sprites.other.dream_world)
         this.listaPkmn[datos.id-1] = datos
       }) 
     }    
