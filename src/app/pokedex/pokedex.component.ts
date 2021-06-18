@@ -9,21 +9,25 @@ import { ApiKachuService } from '../Servicios/api-kachu.service';
 export class PokedexComponent implements OnInit {
 
   listaPkmn = [];
-
+  page: number;
   constructor(
     private apiKachu: ApiKachuService
   ) { }
 
   ngOnInit(): void {
-    this.getPkmn(1);
+    this.page = 1;
+    this.getPkmn(this.page);
   }
 
 
-  getPkmn(page) {
+  async getPkmn(page) {
     this.listaPkmn = [];
+    let contador = 1;
+    console.log(page)
     for (let x = ((page-1)*12)+1; x <= (page*12); x++) {
-      this.apiKachu.getPKMN(x).then(datos => {
-        this.listaPkmn[datos.id-1] = datos
+      await this.apiKachu.getPKMN(x).then(datos => {
+        this.listaPkmn[contador-1] = datos
+        contador++
       }) 
     }    
   }
@@ -36,4 +40,13 @@ export class PokedexComponent implements OnInit {
     }
   }
 
+  adelante(){
+    this.page++;
+    console.log(this.page)
+    this.getPkmn(this.page);
+  }
+  atras(){
+    this.page--;
+    this.getPkmn(this.page);
+  }
 }
