@@ -1,0 +1,222 @@
+/*Right*/
+.normal-right{
+    border-right: peachpuff solid 4px;
+}
+.water-right{
+    border-right: mediumturquoise solid 4px;    
+}
+.fire-right{
+    border-right: crimson solid 4px;
+}
+.grass-right{
+    border-right: lime solid 4px;
+}
+.flying-right{
+    border-right: powderblue solid 4px;
+}
+.electric-right{
+    border-right: yellow solid 4px;
+}
+.bug-right{
+    border-right: forestgreen solid 4px;
+}
+.poison-right{
+    border-right: darkviolet solid 4px;
+}
+.fighting-right{
+    border-right:  indianred solid 4px;
+}
+.dark-right{
+    border-right:  black solid 4px;
+}
+.psychic-right{
+    border-right: fuchsia solid 4px;
+}
+.ghost-right{
+    border-right: indigo solid 4px;
+}
+.steel-right{
+    border-right: grey solid 4px;
+}
+.ice-right{
+    border-right: lightcyan solid 4px;
+}
+.ground-right{
+    border-right: burlywood solid 4px;
+}
+.rock-right{
+    border-right: saddlebrown solid 4px;
+}
+.fairy-right{
+    border-right: hotpink solid 4px;
+}
+.dragon-right{
+    border-right: darkslateblue solid 4px;
+}
+/*Left*/
+.normal-left{
+    border-left:  peachpuff solid 4px;
+}
+.water-left{
+    border-left: mediumturquoise solid 4px;
+}
+.fire-left{
+    border-left: crimson solid 4px;
+}
+.grass-left{
+    border-left: lime solid 4px;
+}
+.flying-left{
+    border-left: powderblue solid 4px;
+}
+.electric-left{
+    border-left: yellow solid 4px;
+}
+.bug-left{
+    border-left: forestgreen solid 4px;
+}
+.poison-left{
+    border-left: darkviolet solid 4px;
+}
+.fighting-left{
+    border-left: indianred solid 4px;
+}
+.dark-left{
+    border-left: black solid 4px;
+}
+.psychic-left{
+    border-left: fuchsia solid 4px;
+}
+.ghost-left{
+    border-left: indigo solid 4px;
+}
+.steel-left{
+    border-left: grey solid 4px;
+}
+.ice-left{
+    border-left: lightcyan solid 4px;
+}
+.ground-left{
+    border-left: burlywood solid 4px;
+}
+.rock-left{
+    border-left: saddlebrown solid 4px;
+}
+.fairy-left{
+    border-left: hotpink solid 4px;
+}
+.dragon-left{
+    border-left: darkslateblue solid 4px;
+}
+/*Bottom*/
+.normal-bottom{
+    border-bottom:  peachpuff solid 4px;
+}
+.water-bottom{
+    border-bottom: mediumturquoise solid 4px;
+}
+.fire-bottom{
+    border-bottom: crimson solid 4px;;
+}
+.grass-bottom{
+    border-bottom: lime solid 4px;
+}
+.flying-bottom{
+    border-bottom: powderblue solid 4px;
+}
+.electric-bottom{
+    border-bottom: yellow solid 4px;
+}
+.bug-bottom{
+    border-bottom: forestgreen solid 4px;
+}
+.poison-bottom{
+    border-bottom: darkviolet solid 4px;
+
+}
+.fighting-bottom{
+    border-bottom:  indianred solid 4px;
+}
+.dark-bottom{
+    border-bottom: black solid 4px;
+}
+.psychic-bottom{
+    border-bottom: fuchsia solid 4px;
+}
+.ghost-bottom{
+    border-bottom: indigo solid 4px;
+}
+.steel-bottom{
+    border-bottom: grey solid 4px;
+}
+.ice-bottom{
+    border-bottom: lightcyan solid 4px;
+}
+.ground-bottom{
+    border-bottom: burlywood solid 4px;
+}
+.rock-bottom{
+    border-bottom: saddlebrown solid 4px;
+}
+.fairy-bottom{
+    border-bottom: hotpink solid 4px;
+}
+.dragon-bottom{
+    border-bottom: darkslateblue solid 4px;
+}
+
+/*Top*/
+.normal-top{
+    border-top:  peachpuff solid 4px;
+}
+.water-top{
+    border-top: mediumturquoise solid 4px;
+}
+.fire-top{
+    border-top: crimson solid 4px;;
+}
+.grass-top{
+    border-top: lime solid 4px;
+}
+.flying-top{
+    border-top: powderblue solid 4px;
+}
+.electric-top{
+    border-top: yellow solid 4px;
+}
+.bug-top{
+    border-top: forestgreen solid 4px;
+}
+.poison-top{
+    border-top: darkviolet solid 4px;
+}
+.fighting-top{
+    border-top:  indianred solid 4px;
+}
+.dark-top{
+    border-top: black solid 4px;
+}
+.psychic-top{
+    border-top: fuchsia solid 4px;
+}
+.ghost-top{
+    border-top: indigo solid 4px;
+}
+.steel-top{
+    border-top: grey solid 4px;
+}
+.ice-top{
+    border-top: lightcyan solid 4px;
+}
+.ground-top{
+    border-top: burlywood solid 4px;
+}
+.rock-top{
+    border-top: saddlebrown solid 4px;
+}
+.fairy-top{
+    border-top: hotpink solid 4px;
+}
+.dragon-top{
+    border-top: darkslateblue solid 4px;
+}
