@@ -1,4 +1,8 @@
 <div class="container">
+    <div class="row justify-content-around p-2">
+        <div class="col col-2"><button [disabled]="page==1" class="btn form-control btn-primary" (click)="atras()">Atrás</button></div>
+        <div class="col col-2"><button class="btn form-control btn-primary" (click)="adelante()">Adelante</button></div>
+    </div>
     <div class="row">
         <div class="col col-3 p-2" *ngFor="let pkmn of listaPkmn" >
             <div  class="text-center p-2" [ngClass]="creoClase(pkmn.types[0].type.name, pkmn.types[1])">
@@ -10,13 +14,5 @@
                 </strong>
             </div>
         </div>
-    </div>
-    <div class="row mb-3">
-        <div class="col col-2"><button [disabled]="page==1" class="btn form-control btn-primary" (click)="atras()">Atrás</button></div>
-        <div class="col col-2"></div>
-        <div class="col col-2"></div>
-        <div class="col col-2"></div>
-        <div class="col col-2"></div>
-        <div class="col col-2"><button class="btn form-control btn-primary" (click)="adelante()">Adelante</button></div>
     </div>
 </div>
