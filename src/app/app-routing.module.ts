@@ -8,7 +8,10 @@ const routes: Routes = [
     path: '',
     component: PokedexComponent
   },{
-    path: 'pokemon/:num',
+    path: '/pokedex',
+    component: PokedexComponent
+  },{
+    path: '/pokemon/:num',
     component: PokemonComponent
   },{
     path: '**',

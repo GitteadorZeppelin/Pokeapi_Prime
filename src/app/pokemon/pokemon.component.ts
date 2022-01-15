@@ -27,7 +27,8 @@ export class PokemonComponent implements OnInit {
   getPkmn() {
     let num: any;
     this.route.params.subscribe(params => {
-      num = params.num;
+      num = params;
+      num = num.num
     });
     this.apiKachu.getPKMN(num).then(datos => {
       this.pkmn = datos;

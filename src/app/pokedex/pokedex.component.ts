@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApikachuService } from '../apikachu.service';
-
+import {RouterModule} from '@angular/router';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
